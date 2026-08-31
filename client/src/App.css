@@ -1,0 +1,17 @@
+.body{
+  list-style: none;
+  width:500px;
+  margin: auto;
+
+
+}
+.customList{ list-style: none;; }
+.customList-item{ display: flex; align-items: center; justify-content: center; gap:20px; }
+.item{ 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start; 
+  gap:10px; 
+  width:100%;
+}
+h3{margin: 0;}
