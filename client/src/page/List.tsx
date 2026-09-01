@@ -2,19 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { postPost } from '../api/post';
 import { getList } from '../api/getList';
 import { Link } from 'react-router-dom';
+import { validatePost } from '../hook';
 
 export const List = () => {
 
     const [get, setGet] = useState(null)
-    const [title, setTitle] = useState("");
-    const [category, setCategory] = useState("");
+    const [insert,setInsert] = useState({
+        title:'',
+        category:'',
+        text:''
+    })
     
     
     const add =  async ()=>{
-  
-      console.log("추가")
-      await postPost({title,category})
-      await fetchData()
+        const error = validatePost(insert)
+
+        if (error) {
+            alert(error);
+            return;
+        }
+
+        await postPost(insert)
+        await fetchData()
     }
   
     const fetchData = async () => {
@@ -29,9 +38,38 @@ export const List = () => {
     return (
 
         <div className='body'>
-            <input type="text" onChange={(e)=>setTitle(e.target.value)} placeholder='title' />
-            <input type="text" onChange={(e)=>setCategory(e.target.value)}  placeholder='category' />
-            <button onClick={add}>Insert</button>
+            <div className="insert_sec">
+                <input 
+                    type="text" 
+                    onChange={(e)=>setInsert({
+                        title:e.target.value,
+                        category:insert.category,
+                        text:insert.text
+                    })} 
+                    placeholder='title' 
+                />
+                <input 
+                    type="text" 
+                    onChange={(e)=>setInsert({
+                        title:insert.title,
+                        category:e.target.value,
+                        text:insert.text
+                    })}  
+                    placeholder='category' 
+                />
+                <textarea 
+                    name="" 
+                    id=""
+                    onChange={(e)=>setInsert({
+                        title:insert.title,
+                        category:insert.category,
+                        text:e.target.value,
+                    })}  
+                    placeholder='text' 
+                ></textarea>
+                <button onClick={add}>Insert</button>
+            </div>
+            
 
             <ul className='customList'>
                 {get?.map((el)=>(

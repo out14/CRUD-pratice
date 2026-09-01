@@ -2,7 +2,8 @@ export const postPost = async(post)=>{
 
     const newPost = {
         title: post.title,
-        category: post.category
+        category: post.category,
+        text:post.text
     }
 
     const response = await fetch("http://localhost:3000/api/posts", {

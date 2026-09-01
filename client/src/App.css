@@ -2,16 +2,77 @@
   list-style: none;
   width:500px;
   margin: auto;
-
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  align-items: flex-start;
+  justify-content: flex-start;
 
 }
 .customList{ list-style: none;; }
 .customList-item{ display: flex; align-items: center; justify-content: center; gap:20px; }
 .item{ 
   display: flex; 
-  align-items: center; 
+  align-items: flex-start; 
   justify-content: flex-start; 
   gap:10px; 
   width:100%;
 }
+.item .title{
+  width:100px;
+  text-align: left;
+}
 h3{margin: 0;}
+.item textarea{
+  resize: none;
+  width:300px;
+  height:300px;
+}
+.item input{
+  width:300px;
+}
+.insert_sec{
+  display: flex;;
+  flex-direction: column;
+  gap:10px;
+  width:300px;
+  margin: auto;
+}
+.insert_sec input{ 
+  width:100%;
+  padding-block: 0px;
+  padding-inline: 0px;
+  box-sizing: border-box;
+  text-indent: 5px;
+}
+.insert_sec textarea{ width:100%; resize: none; text-indent: 5px; box-sizing: border-box; }
+.btn_controller{
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap:10px; 
+  width:100%;
+  margin-top: 100px;
+}
+.btn_controller button{
+  border-radius: 4px;
+  padding-block: 0 !important;
+  padding-inline: 0 !important;
+  padding:5px 10px !important;
+  background: #bb9b65;
+  color:#fff;
+  border: none;
+  display: block;
+  line-height: 1;
+  font-size:14px;
+}
+.btn_controller a{
+  border-radius: 4px;
+  padding:5px 10px;
+  background: #bb9b65;
+  color:#fff;
+  text-decoration: none;
+  display: block;
+  line-height: 1;
+  font-size:14px;
+}

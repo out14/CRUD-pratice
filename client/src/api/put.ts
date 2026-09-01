@@ -4,10 +4,12 @@ export const putPut = async(id,put) => {
 
     console.log("PUT id:", id);
     console.log("PUT data:", put);
+    
 
     const newPut ={
         title:put.title,    
-        category:put.category
+        category:put.category,
+        text:put.text
     }
 
     const response = await fetch(`http://localhost:3000/api/posts/${id}`,{

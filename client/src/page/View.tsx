@@ -29,17 +29,16 @@ export  const View = () => {
     return (
         <div className='body'>
             <div className='item'>
-                제목: {get?.title}
+                <div className="title">제목:</div> {get?.title}
             </div>
             <div className='item'>
-                카테고리: {get?.category}
+                <div className="title">카테고리:</div> {get?.category}
             </div>
-            <div className="view_cnt">
-                내용:
-
-            </div>
-
             <div className="item">
+                <div className="title">내용:</div> {get?.text}
+            </div>
+
+            <div className="btn_controller">
                 <Link to={`/list/edit/${id}`}>수정</Link>
                 <button onClick={btnDel}>삭제</button>
                 <Link to="/list">목록으로</Link>
