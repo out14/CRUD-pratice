@@ -35,7 +35,6 @@ export const getView = (req,res)=>{
             message: "서버 오류가 발생했습니다."
         });
     }
-
 }
 
 export const getPost = (req,res)=>{
