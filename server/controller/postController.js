@@ -37,7 +37,7 @@ export const getView = (req,res)=>{
     }
 }
 
-export const getPost = (req,res)=>{
+export const createPost = (req,res)=>{
     const data = fs.readFileSync("./data/post.json", "utf-8");
     const posts = JSON.parse(data);
 
@@ -56,7 +56,7 @@ export const getPost = (req,res)=>{
     res.json(newPost);
 }
 
-export const getPut = (req,res)=>{
+export const updatePost = (req,res)=>{
     const { id } = req.params;
     const data = fs.readFileSync("./data/post.json", "utf-8");
     const puts = JSON.parse(data);
@@ -82,7 +82,7 @@ export const getPut = (req,res)=>{
     
 }
 
-export const getDelete =(req, res)=>{
+export const deletePost =(req, res)=>{
     const data = fs.readFileSync("./data/post.json", "utf-8");
     const deletes = JSON.parse(data);
     const index = deletes.findIndex((e) => e.id===req.params.id);

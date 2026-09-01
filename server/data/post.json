@@ -13,7 +13,7 @@
   },
   {
     "id": "d69bb7d5-415c-447f-ae7e-25f7e331e57c",
-    "title": "연남족발1987",
+    "title": "연남족발1987 연남",
     "category": "store",
     "text": "요식업에서 일했던 내용입니다."
   },
@@ -40,5 +40,11 @@
     "title": "",
     "category": "",
     "text": "ㅁㄴㅁㄴㅁㄴ"
+  },
+  {
+    "id": "3f6ce9b8-d97f-44db-8e80-f8fa3043b7df",
+    "title": "toy project",
+    "category": "server",
+    "text": "express로  server 구현"
   }
 ]
