@@ -1,7 +1,5 @@
 import express from "express";
 import cors from "cors"
-import fs from "fs";
-import { randomUUID } from "crypto";
 import postRoutes from "./routes/postRoutes.js"
 
 const app = express();
