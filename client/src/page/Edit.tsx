@@ -10,7 +10,7 @@ export const Edit = () => {
     const [changeItem, setChangeItem] = useState({
         title:"",
         category:"",
-        text:""
+        content:""
     })
     const fetchData = async () => {
         const data = await getView(id)
@@ -25,14 +25,15 @@ export const Edit = () => {
                 alert(error);
                 return
             }
-
+            console.log('?????')
             await putPut(id,{
             
                 title: changeItem.title,
                 category: changeItem.category,
-                text: changeItem.text
+                content: changeItem.content
             });
-            await fetchData()
+            
+            console.log('!!!!')
             navigate(`/list/view/${id}`)
         }
         
@@ -73,11 +74,11 @@ export const Edit = () => {
                 <div className="title">내용:</div>
                 <textarea 
                     name="" id="" 
-                    defaultValue={changeItem?.text} 
+                    defaultValue={changeItem?.content} 
                     onChange={(e) =>
                         setChangeItem({
                             ...changeItem,
-                            text: e.target.value
+                            content: e.target.value
                         })
                     }
                 ></textarea>

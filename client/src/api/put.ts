@@ -2,25 +2,28 @@
 
 export const putPut = async(id,put) => {
 
-    console.log("PUT id:", id);
-    console.log("PUT data:", put);
-    
-
     const newPut ={
         title:put.title,    
         category:put.category,
-        text:put.text
+        content:put.content
     }
+    try {
+        const url = `http://localhost:3000/api/posts/${id}`;
+        const response = await fetch(url, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newPut)
+        });
 
-    const response = await fetch(`http://localhost:3000/api/posts/${id}`,{
-        method:"PUT",
-        headers: {"Content-Type": "application/json"},
-        body:JSON.stringify(newPut)
-    });
-   
-    console.log("PUT URL:", response.url);
-    console.log("PUT status:", response.status);
+        // 서버에서 JSON으로 응답하는 경우
+        const result = await response.json();
+        return result;
 
-    return response
+    } catch (error) {
+        console.error("❌ PUT 에러:", error);
+        throw error;
+    }
 };
 

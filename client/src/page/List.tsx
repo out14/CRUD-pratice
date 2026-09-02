@@ -10,7 +10,7 @@ export const List = () => {
     const [insert,setInsert] = useState({
         title:'',
         category:'',
-        text:''
+        content:''
     })
     
     
@@ -44,7 +44,7 @@ export const List = () => {
                     onChange={(e)=>setInsert({
                         title:e.target.value,
                         category:insert.category,
-                        text:insert.text
+                        content:insert.content
                     })} 
                     placeholder='title' 
                 />
@@ -53,7 +53,7 @@ export const List = () => {
                     onChange={(e)=>setInsert({
                         title:insert.title,
                         category:e.target.value,
-                        text:insert.text
+                        content:insert.content
                     })}  
                     placeholder='category' 
                 />
@@ -63,9 +63,9 @@ export const List = () => {
                     onChange={(e)=>setInsert({
                         title:insert.title,
                         category:insert.category,
-                        text:e.target.value,
+                        content:e.target.value,
                     })}  
-                    placeholder='text' 
+                    placeholder='content' 
                 ></textarea>
                 <button onClick={add}>Insert</button>
             </div>

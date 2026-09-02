@@ -35,7 +35,7 @@ export  const View = () => {
                 <div className="title">카테고리:</div> {get?.category}
             </div>
             <div className="item">
-                <div className="title">내용:</div> {get?.text}
+                <div className="title">내용:</div> {get?.content}
             </div>
 
             <div className="btn_controller">
